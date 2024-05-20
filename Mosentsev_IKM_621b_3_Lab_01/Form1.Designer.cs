@@ -57,12 +57,31 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.LabelStack = new System.Windows.Forms.Label();
+            this.StackText = new System.Windows.Forms.Label();
+            this.Stacktb = new System.Windows.Forms.TextBox();
+            this.Peek = new System.Windows.Forms.Button();
+            this.Pop = new System.Windows.Forms.Button();
+            this.Push = new System.Windows.Forms.Button();
+            this.LabelQueue = new System.Windows.Forms.Label();
+            this.QueueText = new System.Windows.Forms.Label();
+            this.Queuetb = new System.Windows.Forms.TextBox();
+            this.Peek_q = new System.Windows.Forms.Button();
+            this.Dequeue = new System.Windows.Forms.Button();
+            this.Enqueue = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwOpen)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bStart
@@ -258,6 +277,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(5, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -290,6 +310,156 @@
             this.tabPage2.Text = "Робота з файлами";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.splitContainer1);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(787, 395);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Стек/Черга";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.IsSplitterFixed = true;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.LightGray;
+            this.splitContainer1.Panel1.Controls.Add(this.LabelStack);
+            this.splitContainer1.Panel1.Controls.Add(this.StackText);
+            this.splitContainer1.Panel1.Controls.Add(this.Stacktb);
+            this.splitContainer1.Panel1.Controls.Add(this.Peek);
+            this.splitContainer1.Panel1.Controls.Add(this.Pop);
+            this.splitContainer1.Panel1.Controls.Add(this.Push);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.Silver;
+            this.splitContainer1.Panel2.Controls.Add(this.LabelQueue);
+            this.splitContainer1.Panel2.Controls.Add(this.QueueText);
+            this.splitContainer1.Panel2.Controls.Add(this.Queuetb);
+            this.splitContainer1.Panel2.Controls.Add(this.Peek_q);
+            this.splitContainer1.Panel2.Controls.Add(this.Dequeue);
+            this.splitContainer1.Panel2.Controls.Add(this.Enqueue);
+            this.splitContainer1.Size = new System.Drawing.Size(787, 395);
+            this.splitContainer1.SplitterDistance = 353;
+            this.splitContainer1.TabIndex = 0;
+            // 
+            // LabelStack
+            // 
+            this.LabelStack.AutoSize = true;
+            this.LabelStack.Location = new System.Drawing.Point(162, 290);
+            this.LabelStack.Name = "LabelStack";
+            this.LabelStack.Size = new System.Drawing.Size(35, 13);
+            this.LabelStack.TabIndex = 5;
+            this.LabelStack.Text = "label3";
+            // 
+            // StackText
+            // 
+            this.StackText.AutoSize = true;
+            this.StackText.Location = new System.Drawing.Point(159, 61);
+            this.StackText.Name = "StackText";
+            this.StackText.Size = new System.Drawing.Size(31, 13);
+            this.StackText.TabIndex = 4;
+            this.StackText.Text = "Стек";
+            // 
+            // Stacktb
+            // 
+            this.Stacktb.Location = new System.Drawing.Point(120, 144);
+            this.Stacktb.Name = "Stacktb";
+            this.Stacktb.Size = new System.Drawing.Size(100, 20);
+            this.Stacktb.TabIndex = 3;
+            // 
+            // Peek
+            // 
+            this.Peek.Location = new System.Drawing.Point(264, 200);
+            this.Peek.Name = "Peek";
+            this.Peek.Size = new System.Drawing.Size(75, 23);
+            this.Peek.TabIndex = 2;
+            this.Peek.Text = "Peek";
+            this.Peek.UseVisualStyleBackColor = true;
+            this.Peek.Click += new System.EventHandler(this.Peek_Click);
+            // 
+            // Pop
+            // 
+            this.Pop.Location = new System.Drawing.Point(133, 200);
+            this.Pop.Name = "Pop";
+            this.Pop.Size = new System.Drawing.Size(75, 23);
+            this.Pop.TabIndex = 1;
+            this.Pop.Text = "Pop";
+            this.Pop.UseVisualStyleBackColor = true;
+            this.Pop.Click += new System.EventHandler(this.Pop_Click);
+            // 
+            // Push
+            // 
+            this.Push.Location = new System.Drawing.Point(18, 200);
+            this.Push.Name = "Push";
+            this.Push.Size = new System.Drawing.Size(75, 23);
+            this.Push.TabIndex = 0;
+            this.Push.Text = "Push";
+            this.Push.UseVisualStyleBackColor = true;
+            this.Push.Click += new System.EventHandler(this.Push_Click);
+            // 
+            // LabelQueue
+            // 
+            this.LabelQueue.AutoSize = true;
+            this.LabelQueue.Location = new System.Drawing.Point(191, 290);
+            this.LabelQueue.Name = "LabelQueue";
+            this.LabelQueue.Size = new System.Drawing.Size(35, 13);
+            this.LabelQueue.TabIndex = 5;
+            this.LabelQueue.Text = "label3";
+            // 
+            // QueueText
+            // 
+            this.QueueText.AutoSize = true;
+            this.QueueText.Location = new System.Drawing.Point(188, 75);
+            this.QueueText.Name = "QueueText";
+            this.QueueText.Size = new System.Drawing.Size(41, 13);
+            this.QueueText.TabIndex = 4;
+            this.QueueText.Text = " Черга";
+            // 
+            // Queuetb
+            // 
+            this.Queuetb.Location = new System.Drawing.Point(164, 144);
+            this.Queuetb.Name = "Queuetb";
+            this.Queuetb.Size = new System.Drawing.Size(100, 20);
+            this.Queuetb.TabIndex = 3;
+            // 
+            // Peek_q
+            // 
+            this.Peek_q.Location = new System.Drawing.Point(306, 200);
+            this.Peek_q.Name = "Peek_q";
+            this.Peek_q.Size = new System.Drawing.Size(75, 23);
+            this.Peek_q.TabIndex = 2;
+            this.Peek_q.Text = "Peek_q";
+            this.Peek_q.UseVisualStyleBackColor = true;
+            this.Peek_q.Click += new System.EventHandler(this.Peek_q_Click);
+            // 
+            // Dequeue
+            // 
+            this.Dequeue.Location = new System.Drawing.Point(177, 198);
+            this.Dequeue.Name = "Dequeue";
+            this.Dequeue.Size = new System.Drawing.Size(75, 23);
+            this.Dequeue.TabIndex = 1;
+            this.Dequeue.Text = "Dequeue";
+            this.Dequeue.UseVisualStyleBackColor = true;
+            this.Dequeue.Click += new System.EventHandler(this.Dequeue_Click);
+            // 
+            // Enqueue
+            // 
+            this.Enqueue.Location = new System.Drawing.Point(52, 199);
+            this.Enqueue.Name = "Enqueue";
+            this.Enqueue.Size = new System.Drawing.Size(75, 23);
+            this.Enqueue.TabIndex = 0;
+            this.Enqueue.Text = "Enqueue";
+            this.Enqueue.UseVisualStyleBackColor = true;
+            this.Enqueue.Click += new System.EventHandler(this.Enqueue_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 461);
@@ -320,6 +490,13 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,6 +533,20 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Label LabelStack;
+        private System.Windows.Forms.Label StackText;
+        private System.Windows.Forms.TextBox Stacktb;
+        private System.Windows.Forms.Button Peek;
+        private System.Windows.Forms.Button Pop;
+        private System.Windows.Forms.Button Push;
+        private System.Windows.Forms.Button Peek_q;
+        private System.Windows.Forms.Button Dequeue;
+        private System.Windows.Forms.Button Enqueue;
+        private System.Windows.Forms.Label LabelQueue;
+        private System.Windows.Forms.Label QueueText;
+        private System.Windows.Forms.TextBox Queuetb;
     }
 }
 

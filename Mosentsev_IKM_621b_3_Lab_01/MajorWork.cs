@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace Mosentsev_IKM_621b_3_Lab_01
 {
@@ -18,6 +19,12 @@ namespace Mosentsev_IKM_621b_3_Lab_01
         private string Result; // Поле результату
         public bool Modify;
         private int Key;// поле ключа
+
+        public Stack myStack = new Stack();
+        public string[] myArr = new string[100];
+
+        public Queue myQueue = new Queue();
+        public string[] smyQueue = new string[100];
 
         // Методи
         public void SetTime() // метод запису часу початку роботи програми
