@@ -26,5 +26,15 @@ namespace Mosentsev_IKM_621b_3_Lab_01
         {
             Close();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            if (progressBar1.Value < 100)
+            {
+                progressBar1.Value += 1;
+            }
+            timer1.Start();
+        }
     }
 }
